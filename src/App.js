@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
+import Loader from './Loader';
 
 function App() {
   const [advice, setAdvice] = useState(''); 
@@ -22,21 +23,9 @@ function App() {
   return(
     <div className="app">
       <div className="card">
-        {isLoading ? (
-        <>
-          <div class="preloader-wrapper small active">
-            <div class="spinner-layer spinner-red-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-          </div>
-        </>
-        ) : (
+        {isLoading
+        ? <Loader />
+        : (
           <>
             <h1 className="heading">{advice}</h1>
             <button className="button" onClick={fetchAdvice}>
