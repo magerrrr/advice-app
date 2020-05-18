@@ -28,7 +28,7 @@ class App extends React.Component {
     return(
       <div className="app">
         <div className="card">
-    <h1 className="heading"></h1>{this.state.isLoading ? 'Please wait, new advice is loading...' : advice}</h1>
+    <h1 className="heading">{this.state.isLoading ? 'Please wait, new advice is loading...' : advice}</h1>
     <button className="button" onClick={this.fetchAdvice}>
       <span>GIVE ME ADVICE!</span>
     </button>
