@@ -11,11 +11,6 @@ h1.heading {
   font-weight: 300;
 }
 
-.loading {
-  font-size: 1.4em;
-  font-weight: 300;
-}
-
 .app {
   height: 100%;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/tulips.jpg');
@@ -68,14 +63,14 @@ h1.heading {
 .button span {
   color: #852421;
   letter-spacing: 0.7px;
-  font-size: 1.6em;
+  font-size: 1.2em;
   font-weight: 400;
 }
 
 @media only screen and (max-width: 600px) {
   .card {
-      width: 80%;
-      height: 30%;
+    width: 80%;
+    height: 30%;
   }
 
   h1.heading {

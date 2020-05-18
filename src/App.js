@@ -28,7 +28,21 @@ class App extends React.Component {
     return(
       <div className="app">
         <div className="card">
-          {this.state.isLoading ? <h1 className="loading">Please wait, new advice is loading...</h1> : (
+          {this.state.isLoading ? (
+          <>
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </>
+          ) : (
             <>
               <h1 className="heading">{advice}</h1>
               <button className="button" onClick={this.fetchAdvice}>
