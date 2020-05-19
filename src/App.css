@@ -17,6 +17,7 @@ h1.heading {
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -30,41 +31,24 @@ h1.heading {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 15px;
   padding: 2%;
 }
 
 .heading {
   display: flex;
   align-items: center;
-  height: 580px;
+  height: 135px;
   margin-left: 5px;
   margin-right: 5px;
   font-family: 'Quicksand', Arial, sans-serif
 }
 
-.button {
-  position: relative;
-  outline: none;
-  text-decoration: none;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  height: 120px;
-  width: 260px;
-  opacity: 1;
-  background-color: #ffffff;
-  border: 1px solid rgba(168, 117, 160, 0.6);
+.btn-small {
+  background-color: #b43163;
 }
-  
-.button span {
-  color: #852421;
-  letter-spacing: 0.7px;
-  font-size: 1.2em;
-  font-weight: 400;
+
+.btn-small:hover {
+  background-color: #8a1542;
 }
 
 @media only screen and (max-width: 600px) {
@@ -76,11 +60,8 @@ h1.heading {
   h1.heading {
     font-size: 1.2em;
   }
-  .button {
-    margin-bottom: 10px;
-  }
 
-  .button span {
-    font-size: 1.3em;
+  .heading{
+    height: 100px;
   }
 }
