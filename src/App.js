@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [advice, setAdvice] = useState('Hi! Tap to the button below for advice'); 
+  const [advice, setAdvice] = useState(''); 
   const [isLoading, setIsLoading] = useState(false);
 
   const ADVICE_ID_MIN = 1;
   const ADVICE_ID_MAX = 217;
+
+  const btnClasses = `waves-effect waves-light btn-small ${isLoading && 'btn disabled'}`;
   
   const getRandomNumber = (min, max) => {
     min = Math.ceil(min);
@@ -28,17 +30,19 @@ function App() {
     .then(text => JSON.parse(`${text}}`))
     .then(obj => {
       const {advice} = obj.slip;
-      setAdvice(advice)   
+      setAdvice(advice);
       setIsLoading(false);
     })
   }
 
-  const btnClasses = `waves-effect waves-light btn-small ${isLoading && 'btn disabled'}`;
+  useState(() => {
+    fetchAdvice();
+  }, [])
 
   return(
     <div className="app">
       <div className="card">
-        <h1 className="heading">{advice}</h1>
+        <h1 className="heading">{isLoading ? '' : advice}</h1>
         <a href="/#" className={btnClasses} onClick={fetchAdvice}>Give me advice</a>
       </div>
     </div>
